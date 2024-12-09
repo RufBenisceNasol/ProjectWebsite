@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Details - Eli's Sweet Creations</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(210,183,183,0.6138830532212884) 0%);  
+            min-height: 200vh;
+            background: url("p1.png") no-repeat center center;
+            background-size: cover;
+            background-attachment: absolute; 
+            min-height: 100vh;
+        }
+        
+
+        header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 1000000;
+}
+
+
+
+
+header .sticky{
+    padding: 5px 100px;
+    background: #fff;
+}
+
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color:#323030;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    text-shadow: -4px 5px 8px #dfa7a7;
+}
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: -4px 5px 8px #dfa7a7;
+
+    
+
+}
+header ul li{
+    position: relative;
+    list-style: none;
+}
+
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight:500;
+    transition: 0.6s;
+}
+
+
+header.sticky{
+    background-color: #dfa7a7;
+}
+header.sticky .logo,
+header.sticky ul li a{
+    color:#fff;
+    
+
+}
+
+        #products {
+            margin: 200px auto;
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            
+            
+        }   
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: -1px 6px 50px 0px #dfa7a7;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cake img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+
+        .details {
+            padding: 20px;
+        }
+
+        .details h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .details p {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ff6f61;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            background-color: #dbb7b7;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #dbb7b7;
+        }
+
+        .cart {
+            margin: 40px auto;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: -1px 6px 50px 0px #dfa7a7;
+        }
+
+        .cart h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .cart p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://www.facebook.com/Elisweetcreations/" class="logo">@ELI'S SWEET CREATIONS</a>
+        <ul>
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </header>
+
+    <section id="products">
+        <div class="container">
+            <div class="cake">
+                <img src="bento.jpg" alt="Bento Cake">
+            </div>
+            <div class="details">
+                <h2>BENTO CAKE</h2>
+                <p>Description: Perfect mini cake for every occasion.</p>
+                <p>Size: 4"x3"</p>
+                <p class="price">₱350</p>
+                <button onclick="addToCart('Bento Cake', 350)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="cake">
+                <img src="customized vintage cake.jpg" alt="Customized Vintage Cake" />
+            </div>
+            <div class="details">
+                <h2>VINTAGE CAKE</h2>
+                <p>Description: A classic cake with a vintage design.</p>
+                <p>Size: 10"x8"</p>
+                <p class="price">₱1500</p>
+                <button onclick="addToCart('Customized Vintage Cake', 1500)">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="cake">
+                <img src="2 tier.jpg" alt="2 Tier Cake" />
+            </div>
+            <div class="details">
+                <h2>2 TIER CAKE</h2>
+                <p>Description: Two layers of deliciousness for grand celebrations.</p>
+                <p>Size: 12"x10"</p>
+                <p class="price">₱3000</p>
+                <button onclick="addToCart('2 Tier Cake', 3000)">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="cake">
+                <img src="3 tier.jpg" alt="3 Tier Cake" />
+            </div>
+            <div class="details">
+                <h2>3 TIER CAKE</h2>
+                <p>Description: A three-layer masterpiece for special occasions.</p>
+                <p>Size: 15"x12"</p>
+                <p class="price">₱4500</p>
+                <button onclick="addToCart('3 Tier Cake', 4500)">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="cake">
+                <img src="number cake.jpg" alt="Number Cake" />
+            </div>
+            <div class="details">
+                <h2>NUMBER CAKE</h2>
+                <p>Description: Celebrate your milestones with a number-shaped cake.</p>
+                <p>Size: Customizable</p>
+                <p class="price">₱1200</p>
+                <button onclick="addToCart('Number Cake', 1200)">Add to Cart</button>
+            </div>
+        </div>
+
+    </section>
+
+   
+
+    <script>
+        function addToCart(product, price, imageUrl) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            // Check if the product already exists in the cart
+            const existingItem = cart.find(item => item.product === product);
+            if (existingItem) {
+                existingItem.quantity += 1; // Increment quantity
+            } else {
+                cart.push({ product, price, imageUrl, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${product} has been added to the cart.`);
+            window.location.href = "cart.html"; // Redirect to cart page
+        }
+    </script>
+
+<script>
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+    
+</script>
+</body>
+</html>
